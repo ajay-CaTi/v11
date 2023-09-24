@@ -167,3 +167,14 @@ Alwayas remenber this
 # Why hooks is created?
 
 Use to crate local state variable inside function component, at the top.
+
+# ERROR
+
+error: failed to push some refs to
+I am not following below insted make new branch one
+git pull origin main
+git push -u origin main
+
+# class
+
+When ever an instance of class created or invoked first constructer then render is called
