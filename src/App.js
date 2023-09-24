@@ -6,6 +6,7 @@ import Error from "./components/Error";
 import About from "./components/About";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import RestaurantMenu from "./components/RestaurantMenu";
+import Contact from "./components/Contact";
 
 const App = () => {
   return (
@@ -32,7 +33,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/contact",
-        element: <About />,
+        element: <Contact />,
       },
       {
         path: "/restaurants/:resId",
