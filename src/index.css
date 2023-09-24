@@ -1,0 +1,111 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.logo {
+  width: 100px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav_items {
+  padding-right: 15px;
+}
+
+.nav_items > ul {
+  display: flex;
+}
+
+.nav_items > ul > li {
+  text-decoration: none;
+  color: black;
+  list-style-type: none;
+  padding: 5px 10px;
+  font-size: 1.2rem;
+}
+
+.nav_items > ul > li > a {
+  text-decoration: none;
+  color: black;
+}
+
+.body {
+  margin: 1rem 2rem;
+  background-color: aquamarine;
+}
+
+.res_card {
+  background-color: beige;
+  border: 1px solid #000;
+  max-width: 200px;
+  margin: 0.5rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+.ul_li > li > a:hover {
+  cursor: pointer;
+  background-color: brown;
+  color: white;
+}
+
+.ul_li > li > button {
+  border: none;
+  cursor: pointer;
+  padding: 2px 5px;
+  background-color: rgb(236, 233, 233);
+  color: black;
+  width: 60px;
+}
+
+.ul_li > li > button:hover {
+  cursor: pointer;
+  background-color: black;
+  color: white;
+}
+
+.res_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.res_logo {
+  width: 200px;
+  height: 150px;
+}
+
+.filter_btn {
+  margin: 0 1rem;
+}
+
+.shimmer_container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1rem 2rem;
+  background-color: aquamarine;
+}
+
+.shimmer_card {
+  background-color: beige;
+  border: 1px solid #000;
+  width: 200px;
+  margin: 0.5rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  height: 500px;
+}
+
+.change_a_style {
+  color: black;
+  text-decoration: none;
+}
+
+.menu {
+  text-align: center;
+}
