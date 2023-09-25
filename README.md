@@ -191,4 +191,20 @@ Distribution of code becomes easy to write testcases and easy to debug.
 
 Hooks are just utility function
 
-#
+# Errors handling?
+
+Linters
+
+# Prod build
+
+In production build parcel build a compressed, more efficient, minified in one single file
+
+# Issues with a big, heavy loaded web app
+
+Is they are not a well optimiize if not taken care
+How?
+By lazy loading split a big bundle in smal one while loading
+
+# Lazy without suspense
+
+Error: A component suspended while responding to synchronous input
