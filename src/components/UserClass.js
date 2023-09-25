@@ -3,16 +3,13 @@ import { Component } from "react";
 class UserClass extends Component {
   constructor(props) {
     super(props);
-    this.state = { userInfo: { name: "dummy", location: "delhi" } };
+    this.state = { userInfo: { name: "dummy", login: "delhi" } };
   }
 
   async componentDidMount() {
-    const data = await fetch("https://api.github.com/users/ajay-CaTi");
-    const json = await data.json();
-    console.log(json);
-    this.setState({
-      userInfo: json,
-    });
+    this.timer = setInterval(() => {
+      console.log("Namaste bro");
+    }, 1000);
   }
 
   componentDidUpdate() {
@@ -20,6 +17,7 @@ class UserClass extends Component {
   }
 
   componentWillUnmount() {
+    clearInterval(this.timer);
     console.log("CWUnmount");
   }
 

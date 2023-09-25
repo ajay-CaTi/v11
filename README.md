@@ -178,3 +178,17 @@ git push -u origin main
 # class
 
 When ever an instance of class created or invoked first constructer then render is called
+
+# async is not used with useEffcet(){}?
+
+# constructor and super()?
+
+# Distribution of code?
+
+Distribution of code becomes easy to write testcases and easy to debug.
+
+# Hooks ?
+
+Hooks are just utility function
+
+#
