@@ -2,10 +2,10 @@ import React from "react";
 
 const ShimmerUI = () => {
   return (
-    <div className="shimmer_container">
-      <div className="shimmer_card"></div>
-      <div className="shimmer_card"></div>
-      <div className="shimmer_card"></div>
+    <div className="flex flex-wrap">
+      <div className="w-56"></div>
+      <div className="w-56"></div>
+      <div className="w-56"></div>
     </div>
   );
 };

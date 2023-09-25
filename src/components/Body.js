@@ -39,7 +39,7 @@ const Body = () => {
 
   return (
     <div className="body">
-      <div className="search">
+      <div className="mx-4 my-2">
         <input
           value={searchText}
           onChange={(e) => {
@@ -51,6 +51,7 @@ const Body = () => {
           placeholder="Search here"
         />
         <button
+          className="mx-2 bg-slate-300 px-2 py-1 rounded-md"
           onClick={() => {
             const filteredList = listOfRestaurants.filter((res) =>
               res.info.name.toLowerCase().includes(searchText)
@@ -62,7 +63,7 @@ const Body = () => {
           Search
         </button>
         <button
-          className="filter_btn"
+          className="mx-2 bg-slate-300 px-2 py-1 rounded-md"
           onClick={() => {
             console.log("clicked");
             const filteredList = listOfRestaurants.filter((res) => {
@@ -75,7 +76,7 @@ const Body = () => {
         </button>
       </div>
 
-      <div className="res_container">
+      <div className="flex flex-wrap justify-around mx-2">
         {filteredRestaurant.map((val, index) => {
           return <RestCard key={index} restaurants={val} />;
         })}

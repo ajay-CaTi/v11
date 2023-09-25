@@ -39,17 +39,17 @@ const RestaurantMenu = () => {
   console.log(itemCards, anItemCards, anoItemCards);
 
   return (
-    <div className="menu">
-      <img className="res_logo" src={CDN_URL + cloudinaryImageId} alt={name} />
-      <h3>{name}</h3>
-      <h3>{cuisines.join(",")}</h3>
+    <div className="menu text-center">
+      <img className="w-56" src={CDN_URL + cloudinaryImageId} alt={name} />
+      <h3 className="font-semibold">{name}</h3>
+      <h3 className="font-bold">{cuisines.join(",")}</h3>
       <ul>
         {(itemCards || anItemCards || anoItemCards).map((val) => (
           <li key={val.card.info.id}>
-            {val.card.info.name +
-              " - " +
-              "₹ " +
-              (val.card.info.price || val.card.info.defaultPrice) / 100}
+            {val.card.info.name + " - " + "₹ " + " "}
+            <span className="font-semibold">
+              {(val.card.info.price || val.card.info.defaultPrice) / 100}
+            </span>
           </li>
         ))}
       </ul>

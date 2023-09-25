@@ -208,3 +208,7 @@ By lazy loading split a big bundle in smal one while loading
 # Lazy without suspense
 
 Error: A component suspended while responding to synchronous input
+
+# tailwindcss LIGHT WEIGHT
+
+only the css U include only that much goes in bundle
