@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import RestCard from "./RestCard";
 import ShimmerUI from "./ShimmerUI";
+import useOnlineStatus from "./useOnlineStatus";
 // import restaurants from "../utils/constants";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
+  const onlineStatus = useOnlineStatus();
 
   useEffect(() => {
     fetchData();
@@ -22,6 +24,14 @@ const Body = () => {
     setListOfRestaurants(restaurants);
     setFilteredRestaurant(restaurants);
   };
+
+  if (onlineStatus === false) {
+    return (
+      <div>
+        <h1>Looks you are Offline</h1>
+      </div>
+    );
+  }
 
   if (listOfRestaurants.length === 0) {
     return <ShimmerUI />;

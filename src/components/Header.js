@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import Food from "../food.png";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "./useOnlineStatus";
 const Header = () => {
   const [btnName, setBtnName] = useState("Login");
+  const onlineStatus = useOnlineStatus();
   useEffect(() => {
     console.log("inside Useffect called");
   }, []);
@@ -26,6 +28,7 @@ const Header = () => {
           <li>
             <Link to={"#"}>Cart</Link>
           </li>
+          <li>{onlineStatus ? "🟢 online" : "🔴 offline"}</li>
           <li>
             <button
               onClick={() => {

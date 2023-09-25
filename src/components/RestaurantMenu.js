@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import { CDN_URL } from "../utils/constants";
 import ShimmerUI from "./ShimmerUI";
@@ -8,8 +8,10 @@ import useRestaurantMenu from "./useRestaurantMenu";
 const RestaurantMenu = () => {
   const { resId } = useParams();
   const resInfo = useRestaurantMenu(resId);
-  console.log(resId);
+  const onlineStatus = useOnlineStatus();
+  console.log(onlineStatus);
 
+  console.log(resId);
   console.log(resInfo);
 
   if (resInfo.length === 0) {
