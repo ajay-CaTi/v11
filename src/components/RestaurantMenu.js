@@ -4,6 +4,7 @@ import { CDN_URL } from "../utils/constants";
 import ShimmerUI from "./ShimmerUI";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "./useRestaurantMenu";
+import useOnlineStatus from "./useOnlineStatus";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
