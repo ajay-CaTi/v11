@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import RestCard from "./RestCard";
+import RestCard, { withPromotedLabel } from "./RestCard";
 import ShimmerUI from "./ShimmerUI";
 import useOnlineStatus from "./useOnlineStatus";
 // import restaurants from "../utils/constants";
@@ -9,6 +9,7 @@ const Body = () => {
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
   const onlineStatus = useOnlineStatus();
+  const RestaurantCardPromoted = withPromotedLabel(RestCard);
 
   useEffect(() => {
     fetchData();
@@ -75,11 +76,15 @@ const Body = () => {
           Top rated restaurants
         </button>
       </div>
-
+      {/* if restaurant is promoted then add label to it */}
       <div className="flex flex-wrap justify-around mx-2">
-        {filteredRestaurant.map((val, index) => {
-          return <RestCard key={index} restaurants={val} />;
-        })}
+        {filteredRestaurant.map((val, index) =>
+          val.info.isOpen ? (
+            <RestaurantCardPromoted key={index} restaurants={val} />
+          ) : (
+            <RestCard key={index} restaurants={val} />
+          )
+        )}
       </div>
     </div>
   );

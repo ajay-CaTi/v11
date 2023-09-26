@@ -5,6 +5,7 @@ import ShimmerUI from "./ShimmerUI";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "./useRestaurantMenu";
 import useOnlineStatus from "./useOnlineStatus";
+import RestaurantCategory from "./RestaurantCategory";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
@@ -28,6 +29,18 @@ const RestaurantMenu = () => {
   const { itemCards } =
     resInfo.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
 
+  console.log(resInfo.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards);
+
+  // Category of restaurants
+  const categories =
+    resInfo.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+      (c) =>
+        c?.card?.card?.["@type"] ===
+        "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+    );
+
+  console.log(categories);
+
   const anItemCards =
     resInfo.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card
       ?.itemCards;
@@ -40,10 +53,16 @@ const RestaurantMenu = () => {
 
   return (
     <div className="menu text-center">
-      <img className="w-56" src={CDN_URL + cloudinaryImageId} alt={name} />
-      <h3 className="font-semibold">{name}</h3>
-      <h3 className="font-bold">{cuisines.join(",")}</h3>
-      <ul>
+      <div className="mx-auto w-56">
+        <img className="w-56" src={CDN_URL + cloudinaryImageId} alt={name} />
+      </div>
+      <h3 className="font-bold">{name}</h3>
+      <h3 className="font-semibold">Cuisines:- {cuisines.join(",")}</h3>
+      {categories.map((category, index) => (
+        <RestaurantCategory key={index} data={category?.card?.card} />
+      ))}
+
+      {/* <ul>
         {(itemCards || anItemCards || anoItemCards).map((val) => (
           <li key={val.card.info.id}>
             {val.card.info.name + " - " + "₹ " + " "}
@@ -52,7 +71,7 @@ const RestaurantMenu = () => {
             </span>
           </li>
         ))}
-      </ul>
+      </ul> */}
     </div>
   );
 };
